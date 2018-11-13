@@ -41,23 +41,7 @@ public class VocabularyguidelineDao {
 	{
 		sessionFactory.getCurrentSession().saveOrUpdate(sp);
 	}
-//	public void update(int id, String ten, int instock, String vanchuyen, Double giacu, Double giamoi, String baohanh, int moi, int dacbiet,String anh, String newsletter)
-//	{
-////		sessionFactory.getCurrentSession().beginTransaction();
-//		Vocabularyguideline sp=getById(id);
-//		sp.setTen(ten);
-//		sp.setInstock(instock);
-//		sp.setVanchuyen(vanchuyen);
-//		sp.setGiacu(giacu);
-//		sp.setGiamoi(giamoi);
-//		sp.setBaohanh(baohanh);
-//		sp.setMoi(moi);
-//		sp.setDacbiet(dacbiet);
-//		sp.setAnh(anh);
-//		sp.setNewsletter(newsletter);
-//		sessionFactory.getCurrentSession().update(sp);
-////		sessionFactory.getCurrentSession().getTransaction().commit();
-//	}
+
 	public void delete(int id)
 	{
 		Vocabularyguideline vocabularyguideline=getById(id);
@@ -71,7 +55,8 @@ public class VocabularyguidelineDao {
 		return (List<Vocabularyguideline>)query.list();
 	}
 	
-	public List<Vocabularyguideline> getListByLevelId(String level){
+	public List<Vocabularyguideline> getListByLevelId(String level)
+	{
 		String hql="FROM Vocabularyguideline WHERE levelid='"+ level +"'";
 		Query query=sessionFactory.getCurrentSession().createQuery(hql);
 		return (List<Vocabularyguideline>)query.list();

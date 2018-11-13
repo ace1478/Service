@@ -8,9 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import dakt.javatech.jhibernate.entity.Listenexercise;
 import dakt.javatech.jhibernate.entity.Listenquestion;
-import dakt.javatech.jhibernate.service.ListenexerciseService;
 import dakt.javatech.jhibernate.service.ListenquestionService;
 
 @RestController

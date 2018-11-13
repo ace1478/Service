@@ -54,7 +54,8 @@ public class VocabularycontentDao {
 		Query query=sessionFactory.getCurrentSession().createQuery(hql);
 		return (List<Vocabularycontent>)query.list();
 	}
-	public List<Vocabularycontent> getListByLevelId(String vocabid){
+	public List<Vocabularycontent> getListByLevelId(String vocabid)
+	{
 		String hql="FROM Vocabularycontent WHERE vocabularyguidelineid='"+ vocabid +"'";
 		Query query=sessionFactory.getCurrentSession().createQuery(hql);
 		return (List<Vocabularycontent>)query.list();
