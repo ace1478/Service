@@ -67,5 +67,13 @@ public class ListenguidelineDao {
 		return (ListenGuideline)query.list().get(0);
 	}
 	
+	public List<ListenGuideline> getListByLevelId(String id, int first, int max)
+	{
+		String hql="From ListenGuideline  WHERE levelid ='"+id+"'"; 
+		Query query=sessionFactory.getCurrentSession().createQuery(hql);
+		query.setFirstResult(first);
+		query.setMaxResults(max);
+		return query.list();
+	}
 
 }

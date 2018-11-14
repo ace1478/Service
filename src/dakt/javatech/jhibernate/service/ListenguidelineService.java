@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.hibernate.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -61,5 +62,11 @@ public class ListenguidelineService {
 		public  ListenGuideline getListenGuidelineById(String id)
 		{
 			return listenGuidelineDao.getListenGuidelineById(id);
+		}
+		
+		@Transactional
+		public List<ListenGuideline> getListByLevelId(String id, int first, int max)
+		{
+			return listenGuidelineDao.getListByLevelId(id, first, max);
 		}
 }

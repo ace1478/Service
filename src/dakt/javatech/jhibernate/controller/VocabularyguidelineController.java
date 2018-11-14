@@ -15,9 +15,17 @@ public class VocabularyguidelineController {
 
 	@Autowired
 	VocabularyguidelineService vocabularyGuidelineService;
+	
 	@RequestMapping(value ="/getListVocabularyguideline", method = RequestMethod.GET, headers ="Accept=application/json")
 	public List<Vocabularyguideline> List() {
 		List<Vocabularyguideline> list = vocabularyGuidelineService.list();
 		return list;
+	}
+	
+	@RequestMapping(value ="/getListListVocabularyguidelineByLevelId/LevelId={id}&first={first}&max={max}", method = RequestMethod.GET, headers ="Accept=application/json")
+	public List<Vocabularyguideline> getListByLevelId(@PathVariable String id,@PathVariable int first,@PathVariable int max){
+		 List<Vocabularyguideline> ListByLevelId = vocabularyGuidelineService.getListByLevelId(id, first, max);
+		 return ListByLevelId;
+		
 	}
 }
