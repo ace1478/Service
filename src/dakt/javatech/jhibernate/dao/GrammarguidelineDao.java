@@ -76,7 +76,7 @@ public class GrammarguidelineDao {
 		Query query=sessionFactory.getCurrentSession().createQuery(hql);
 		return (List<Grammarguideline>)query.list();
 	}
-	public List<Grammarguideline> getListByLevelId(String id, int first, int max)
+	public List<Grammarguideline> getListByLevelIdPhanTrang(String id, int first, int max)
 	{
 		String hql="From Grammarguideline  where levelid ='"+id+"'"; 
 		Query query=sessionFactory.getCurrentSession().createQuery(hql);

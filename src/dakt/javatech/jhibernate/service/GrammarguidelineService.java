@@ -44,7 +44,7 @@ public class GrammarguidelineService {
 	}
 	@Transactional
 	public List<Grammarguideline> getListByLevelId(String id, int first, int max){
-		return GrammarguidelineDao.getListByLevelId(id, first, max);
+		return GrammarguidelineDao.getListByLevelIdPhanTrang(id, first, max);
 	}
 	
 }
