@@ -17,7 +17,7 @@ public class ListenguidelineController {
 	@Autowired
 	ListenguidelineService listenGuidelineService;
 	
-	@RequestMapping(value ="/getListListListenguidelineByLevelId/LevelId={id}&first={first}&max={max}", method = RequestMethod.GET, headers ="Accept=application/json")
+	@RequestMapping(value ="/getListPageListenguidelineByLevelId/LevelId={id}&first={first}&max={max}", method = RequestMethod.GET, headers ="Accept=application/json")
 	public List<ListenGuideline> getListByLevelId(@PathVariable String id,@PathVariable int first,@PathVariable int max){
 		 List<ListenGuideline> ListByLevelId = listenGuidelineService.getListByLevelId(id, first, max);
 		 return ListByLevelId;

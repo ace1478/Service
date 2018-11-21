@@ -21,9 +21,9 @@ public class GrammarguidelineController {
 		List<Grammarguideline> list = GrammarguidelineService.list();
 		return list;
 	}
-	@RequestMapping(value ="/getListGrammarguidelineByLevelId/LevelId={LevelId}&first={first}&max={max}", method = RequestMethod.GET, headers ="Accept=application/json")
-	public List<Grammarguideline> getListByLevelId(@PathVariable String LevelId,@PathVariable int first,@PathVariable int max){
-		 List<Grammarguideline> ListByLevelId = GrammarguidelineService.getListByLevelId(LevelId, first, max);
+	@RequestMapping(value ="/getListGrammarguidelineByLevelId/LevelId={id}&first={first}&max={max}", method = RequestMethod.GET, headers ="Accept=application/json")
+	public List<Grammarguideline> getListByLevelId(@PathVariable String id,@PathVariable int first,@PathVariable int max){
+		 List<Grammarguideline> ListByLevelId = GrammarguidelineService.getListByLevelId(id, first, max);
 		 return ListByLevelId;
 		
 	}
