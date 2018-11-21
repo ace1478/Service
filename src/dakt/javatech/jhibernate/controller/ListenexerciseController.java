@@ -22,8 +22,13 @@ public class ListenexerciseController {
 		return listenexercise;
 	}
 	@RequestMapping(value ="/getListListenexerciseById/id={id}", method = RequestMethod.GET, headers ="Accept=application/json")
-	public Listenexercise getListById(@PathVariable int id) {
+	public Listenexercise getById(@PathVariable int id) {
 		Listenexercise listenexercise = listenExrSer.getById(id);
+		return listenexercise;
+	}
+	@RequestMapping(value ="/getLstListenexerciseById/id={id}&first={first}&max={max}", method = RequestMethod.GET, headers ="Accept=application/json")
+	public List<Listenexercise> getListById(@PathVariable String id,@PathVariable int first,@PathVariable int max) {
+		List<Listenexercise> listenexercise = listenExrSer.getListByLevelId(id, first, max);
 		return listenexercise;
 	}
 }

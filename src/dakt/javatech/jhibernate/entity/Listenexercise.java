@@ -21,7 +21,6 @@ public class Listenexercise implements java.io.Serializable {
 	private Integer checkcauhoi;
 	@JsonBackReference
 	private Set<Listenquestion> listenquestions;
-	@JsonBackReference
 	private Level level;
 	
 	public Level getLevel() {

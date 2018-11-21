@@ -35,6 +35,11 @@ public class ListenquestionController {
 		List<Listenquestion> list = listenQuestionService.getListByListenExerciseId(ListenExerciseId, first, max);
 		return list;
 	}
+	@RequestMapping(value ="/getListByListenExerciseId1/ListenExerciseId={ListenExerciseId}", method = RequestMethod.GET, headers ="Accept=application/json")
+	public List<Listenquestion> getListByListenExerciseId(@PathVariable String ListenExerciseId) {
+		List<Listenquestion> list = listenQuestionService.getListByListenExerciseId(ListenExerciseId);
+		return list;
+	}
 
 
 }

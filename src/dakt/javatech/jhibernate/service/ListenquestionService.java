@@ -48,6 +48,11 @@ public class ListenquestionService {
 	{
 		return listenQuestionDao.getListByListenExerciseId(ListenExerciseId, first, max);
 	}
+	@Transactional
+	public List<Listenquestion> getListByListenExerciseId(String ListenExerciseId) 
+	{
+		return listenQuestionDao.getListByListenExerciseId(ListenExerciseId);
+	}
 		
 		
 

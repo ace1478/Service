@@ -77,5 +77,10 @@ public class ListenquestionDao {
 		query.setMaxResults(max);
 		return (List<Listenquestion>)query.list();
 	}
+	public List<Listenquestion> getListByListenExerciseId(String ListenExerciseId) {
+		String hql="From Listenquestion where listenexerciseid ='"+ListenExerciseId +"'";
+		Query query=sessionFactory.getCurrentSession().createQuery(hql);
+		return (List<Listenquestion>)query.list();
+	}
 
 }
