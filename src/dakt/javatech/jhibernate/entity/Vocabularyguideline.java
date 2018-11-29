@@ -19,30 +19,9 @@ public class Vocabularyguideline implements java.io.Serializable {
 	private String vocabularyname;
 	private String vocabularyimage;
 	private Integer checknoidung;
-	@JsonBackReference
-	private Set<Cmtvocabulary> cmtvocabularies;
-	@JsonBackReference
-	private Set<Vocabularycontent> vocabularycontents;
-	private Level level;
-
-	public Level getLevel() {
-		return level;
-	}
-
-	public void setLevel(Level level) {
-		this.level = level;
-	}
+	private Integer levelid;
 
 	public Vocabularyguideline() {
-	}
-
-	public Vocabularyguideline(String vocabularyname, String vocabularyimage, Integer checknoidung, Set cmtvocabularies,
-			Set vocabularycontents) {
-		this.vocabularyname = vocabularyname;
-		this.vocabularyimage = vocabularyimage;
-		this.checknoidung = checknoidung;
-		this.cmtvocabularies = cmtvocabularies;
-		this.vocabularycontents = vocabularycontents;
 	}
 
 	public Integer getVocabularyguidelineid() {
@@ -77,20 +56,12 @@ public class Vocabularyguideline implements java.io.Serializable {
 		this.checknoidung = checknoidung;
 	}
 
-	public Set getCmtvocabularies() {
-		return this.cmtvocabularies;
+	public Integer getLevelid() {
+		return levelid;
 	}
 
-	public void setCmtvocabularies(Set cmtvocabularies) {
-		this.cmtvocabularies = cmtvocabularies;
-	}
-
-	public Set getVocabularycontents() {
-		return this.vocabularycontents;
-	}
-
-	public void setVocabularycontents(Set vocabularycontents) {
-		this.vocabularycontents = vocabularycontents;
+	public void setLevelid(Integer levelid) {
+		this.levelid = levelid;
 	}
 
 }

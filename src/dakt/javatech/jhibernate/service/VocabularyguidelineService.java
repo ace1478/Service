@@ -32,9 +32,15 @@ public class VocabularyguidelineService {
 	}
 	
 	@Transactional
-	public void add(Vocabularyguideline sp)
+	public void add(Vocabularyguideline vocabularyguideline)
 	{
-		vocabularyGuidelineDao.add(sp);;
+		vocabularyGuidelineDao.add(vocabularyguideline);
+	}
+	
+	@Transactional
+	public void update(Vocabularyguideline vocabularyguideline)
+	{
+		vocabularyGuidelineDao.update(vocabularyguideline);
 	}
 	
 	@Transactional

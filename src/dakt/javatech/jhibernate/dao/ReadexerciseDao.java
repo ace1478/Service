@@ -35,27 +35,15 @@ public class ReadexerciseDao {
 	{
 		return (Readexercise)sessionFactory.getCurrentSession().get(Readexercise.class, id);
 	}
-	public void add(Readexercise sp)
+	public void add(Readexercise readexercise)
 	{
-		sessionFactory.getCurrentSession().saveOrUpdate(sp);
+		sessionFactory.getCurrentSession().saveOrUpdate(readexercise);
 	}
-//	public void update(int id, String ten, int instock, String vanchuyen, Double giacu, Double giamoi, String baohanh, int moi, int dacbiet,String anh, String newsletter)
-//	{
-////		sessionFactory.getCurrentSession().beginTransaction();
-//		Readexercise sp=getById(id);
-//		sp.setTen(ten);
-//		sp.setInstock(instock);
-//		sp.setVanchuyen(vanchuyen);
-//		sp.setGiacu(giacu);
-//		sp.setGiamoi(giamoi);
-//		sp.setBaohanh(baohanh);
-//		sp.setMoi(moi);
-//		sp.setDacbiet(dacbiet);
-//		sp.setAnh(anh);
-//		sp.setNewsletter(newsletter);
-//		sessionFactory.getCurrentSession().update(sp);
-////		sessionFactory.getCurrentSession().getTransaction().commit();
-//	}
+
+	public void update(Readexercise readexercise) {
+		sessionFactory.getCurrentSession().update(readexercise);
+	}
+	
 	public void delete(int id)
 	{
 		Readexercise readexercise=getById(id);

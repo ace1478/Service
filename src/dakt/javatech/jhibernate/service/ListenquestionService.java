@@ -29,10 +29,17 @@ public class ListenquestionService {
 		return listenQuestionDao.getById(id);
 	}
 	@Transactional
-	public void add(Listenquestion sp)
+	public void add(Listenquestion listenquestion)
 	{
-		listenQuestionDao.add(sp);
+		listenQuestionDao.add(listenquestion);
 	}
+	
+	@Transactional
+	public void update(Listenquestion listenquestion)
+	{
+		listenQuestionDao.update(listenquestion);
+	}
+	
 	@Transactional
 	public void delete(int id)
 	{

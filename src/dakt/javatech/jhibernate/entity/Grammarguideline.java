@@ -19,20 +19,8 @@ public class Grammarguideline implements java.io.Serializable {
 	private String grammarname;
 	private String grammarimage;
 	private String content;
-	@JsonBackReference
-	private Level level;
-	@JsonBackReference
-	private Set<Cmtgrammar> cmtgrammars;
-
-	public Level getLevel() {
-		return level;
-	}
-
-	public void setLevel(Level level) {
-		this.level = level;
-	}
-
-
+	private Integer levelid;
+	
 	public Integer getGrammarguidelineid() {
 		return this.grammarguidelineid;
 	}
@@ -65,12 +53,12 @@ public class Grammarguideline implements java.io.Serializable {
 		this.content = content;
 	}
 
-	public Set getCmtgrammars() {
-		return this.cmtgrammars;
+	public Integer getLevelid() {
+		return levelid;
 	}
 
-	public void setCmtgrammars(Set cmtgrammars) {
-		this.cmtgrammars = cmtgrammars;
+	public void setLevelid(Integer levelid) {
+		this.levelid = levelid;
 	}
 
 }

@@ -18,10 +18,6 @@ public class Examination implements java.io.Serializable {
 	private String examinationame;
 	private String examinatioimage;
 	private Integer checkedcauhoi;
-	@JsonBackReference
-	private Set<Result> results;
-	@JsonBackReference
-	private Set<Examinationquestion> examinationquestions;
 
 	public Examination() {
 	}
@@ -65,22 +61,6 @@ public class Examination implements java.io.Serializable {
 
 	public void setCheckedcauhoi(Integer checkedcauhoi) {
 		this.checkedcauhoi = checkedcauhoi;
-	}
-
-	public Set getResults() {
-		return this.results;
-	}
-
-	public void setResults(Set results) {
-		this.results = results;
-	}
-
-	public Set getExaminationquestions() {
-		return this.examinationquestions;
-	}
-
-	public void setExaminationquestions(Set examinationquestions) {
-		this.examinationquestions = examinationquestions;
 	}
 
 }

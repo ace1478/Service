@@ -12,46 +12,61 @@ import dakt.javatech.jhibernate.dao.ReadquestionDao;
 import dakt.javatech.jhibernate.entity.Readquestion;
 
 @Service
-@Transactional
 public class ReadQuestionService {
 	
 	@Autowired ReadquestionDao readQuestionDao;
 	
+	@Transactional
 	public List<Readquestion> list()
 	{
 		return readQuestionDao.list();
 	}
 	
+	@Transactional
 	public List<Readquestion> list(int first, int max)
 	{
 		return readQuestionDao.list(first, max);
 	}
+	
+	@Transactional
 	public Readquestion getById(int id)
 	{
 		return readQuestionDao.getById(id);
 	}
-	public void add(Readquestion sp)
+	
+	@Transactional
+	public void add(Readquestion readquestion)
 	{
-		readQuestionDao.add(sp);
+		readQuestionDao.add(readquestion);
+	}
+	
+	@Transactional
+	public void update(Readquestion readquestion)
+	{
+		readQuestionDao.update(readquestion);
 	}
 
+	@Transactional
 	public void delete(int id)
 	{
 		readQuestionDao.delete(id);
 	}
 	
+	@Transactional
 	public List<Readquestion> getId(String s, int id)
 	{
 		return readQuestionDao.getId(s, id);
 	}
 	
-	public List<Readquestion> getListByLevelId(String readexeriseid){
-		return readQuestionDao.getListByLevelId(readexeriseid);
+	@Transactional
+	public List<Readquestion> getListByReadExerciseId(int readexeriseid){
+		return readQuestionDao.getListByReadExerciseId(readexeriseid);
 	}
 	
-	public List<Readquestion> getListPage(int first, int max, String readexeriseid)
+	@Transactional
+	public List<Readquestion> getListByReadExerciseIdPage(int first, int max, String readexeriseid)
 	{
-		return readQuestionDao.getListPage(first, max, readexeriseid);
+		return readQuestionDao.getListByReadExerciseIdPage(first, max, readexeriseid);
 	}
 
 }

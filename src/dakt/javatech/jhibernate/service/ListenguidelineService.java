@@ -35,9 +35,14 @@ public class ListenguidelineService {
 		}
 		
 		@Transactional
-		public void add(ListenGuideline sp)
+		public void add(ListenGuideline listenguideline)
 		{
-			listenGuidelineDao.add(sp);
+			listenGuidelineDao.add(listenguideline);
+		}
+		
+		public void update(ListenGuideline listenguideline)
+		{
+			listenGuidelineDao.update(listenguideline);
 		}
 		
 		@Transactional

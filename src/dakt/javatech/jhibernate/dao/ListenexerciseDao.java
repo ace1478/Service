@@ -49,27 +49,15 @@ public class ListenexerciseDao {
 	{
 		return (Listenexercise)sessionFactory.getCurrentSession().get(Listenexercise.class, id);
 	}
-	public void add(Listenexercise sp)
+	public void add(Listenexercise listenexercise)
 	{
-		sessionFactory.getCurrentSession().saveOrUpdate(sp);
+		sessionFactory.getCurrentSession().saveOrUpdate(listenexercise);
 	}
-//	public void update(int id, String ten, int instock, String vanchuyen, Double giacu, Double giamoi, String baohanh, int moi, int dacbiet,String anh, String newsletter)
-//	{
-////		sessionFactory.getCurrentSession().beginTransaction();
-//		Listenexercise sp=getById(id);
-//		sp.setTen(ten);
-//		sp.setInstock(instock);
-//		sp.setVanchuyen(vanchuyen);
-//		sp.setGiacu(giacu);
-//		sp.setGiamoi(giamoi);
-//		sp.setBaohanh(baohanh);
-//		sp.setMoi(moi);
-//		sp.setDacbiet(dacbiet);
-//		sp.setAnh(anh);
-//		sp.setNewsletter(newsletter);
-//		sessionFactory.getCurrentSession().update(sp);
-////		sessionFactory.getCurrentSession().getTransaction().commit();
-//	}
+
+	public void update(Listenexercise listenexercise) {
+		sessionFactory.getCurrentSession().update(listenexercise);
+	}
+	
 	public void delete(int id)
 	{
 		Listenexercise listenexercise=getById(id);

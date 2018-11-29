@@ -13,17 +13,8 @@ public class ListenGuideline implements java.io.Serializable {
 	private String listenname;
 	private String listenimage;
 	private String content;
-	@JsonBackReference
-	private Set<Cmtlisten> cmtlistens;
-	@JsonBackReference
-	private Level level;
+	private Integer levelid;
 	
-	public Level getLevel() {
-		return level;
-	}
-	public void setLevel(Level level) {
-		this.level = level;
-	}
 	public Integer getListenguidelineid() {
 		return listenguidelineid;
 	}
@@ -48,11 +39,11 @@ public class ListenGuideline implements java.io.Serializable {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Set<Cmtlisten> getCmtlistens() {
-		return cmtlistens;
+	public Integer getLevelid() {
+		return levelid;
 	}
-	public void setCmtlistens(Set<Cmtlisten> cmtlistens) {
-		this.cmtlistens = cmtlistens;
+	public void setLevelid(Integer levelid) {
+		this.levelid = levelid;
 	}
-
+	
 }

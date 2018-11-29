@@ -14,16 +14,6 @@ public class Categorymember implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	private int categorymemberid;
 	private String categorymembername;
-	@JsonBackReference
-	private Set<Member> lstMember;
-	@JsonBackReference
-	public Set<Member> getLstMember() {
-		return lstMember;
-	}
-
-	public void setLstMember(Set<Member> lstMember) {
-		this.lstMember = lstMember;
-	}
 
 	public Categorymember() {
 	}

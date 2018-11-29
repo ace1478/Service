@@ -9,8 +9,6 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import dakt.javatech.jhibernate.entity.ListenGuideline;
-import dakt.javatech.jhibernate.entity.Listenexercise;
 import dakt.javatech.jhibernate.entity.Vocabularyguideline;
 
 @Component 
@@ -37,9 +35,13 @@ public class VocabularyguidelineDao {
 	{
 		return (Vocabularyguideline)sessionFactory.getCurrentSession().get(Vocabularyguideline.class, id);
 	}
-	public void add(Vocabularyguideline sp)
+	public void add(Vocabularyguideline vocabularyguideline)
 	{
-		sessionFactory.getCurrentSession().saveOrUpdate(sp);
+		sessionFactory.getCurrentSession().saveOrUpdate(vocabularyguideline);
+	}
+	
+	public void update(Vocabularyguideline vocabularyguideline) {
+		sessionFactory.getCurrentSession().update(vocabularyguideline);
 	}
 
 	public void delete(int id)

@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import dakt.javatech.jhibernate.entity.ListenGuideline;
-import dakt.javatech.jhibernate.entity.ListenGuideline;
 
 @Component 
 @Transactional
@@ -37,15 +36,19 @@ public class ListenguidelineDao {
 	{
 		return (ListenGuideline)sessionFactory.getCurrentSession().get(ListenGuideline.class, id);
 	}
-	public void add(ListenGuideline sp)
+	public void add(ListenGuideline listenguideline)
 	{
-		sessionFactory.getCurrentSession().saveOrUpdate(sp);
+		sessionFactory.getCurrentSession().saveOrUpdate(listenguideline);
+	}
+	
+	public void update(ListenGuideline listenguideline) {
+		sessionFactory.getCurrentSession().update(listenguideline);
 	}
 
 	public void delete(int id)
 	{
-		ListenGuideline ListenGuideline=getById(id);
-		sessionFactory.getCurrentSession().delete(ListenGuideline);
+		ListenGuideline listenguideline=getById(id);
+		sessionFactory.getCurrentSession().delete(listenguideline);
 	}
 	
 	public List<ListenGuideline> getId(String s, int id)

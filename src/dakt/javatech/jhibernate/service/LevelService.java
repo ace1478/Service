@@ -27,9 +27,15 @@ public class LevelService {
 		return levelDAO.getById(id);
 	}
 	@Transactional
-	public void add(Level sp) {
-		levelDAO.add(sp);
+	public void add(Level level) {
+		levelDAO.add(level);
 	}
+	
+	@Transactional
+	public void update(Level level) {
+		levelDAO.update(level);
+	}
+	
 	@Transactional
 	public void delete(int id) {
 		levelDAO.delete(id);

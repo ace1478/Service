@@ -41,11 +41,11 @@ public class CategorymemberDao {
 	{
 		sessionFactory.getCurrentSession().saveOrUpdate(cate);
 	}
-//	public void update(int id, String email, String name)
-//	{
-//		Categorymember cate=getById(id);
-//		sessionFactory.getCurrentSession().update(cate);
-//	}
+	
+	public void update(Categorymember catemember) {
+		sessionFactory.getCurrentSession().update(catemember);
+	}
+	
 	public void delete(int id)
 	{
 		Categorymember cate=getById(id);

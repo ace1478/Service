@@ -36,27 +36,13 @@ public class ExaminationquestionDao {
 	{
 		return (Examinationquestion)sessionFactory.getCurrentSession().get(Examinationquestion.class, id);
 	}
-	public void add(Examinationquestion sp)
+	public void add(Examinationquestion examquestion)
 	{
-		sessionFactory.getCurrentSession().saveOrUpdate(sp);
+		sessionFactory.getCurrentSession().saveOrUpdate(examquestion);
 	}
-//	public void update(int id, String ten, int instock, String vanchuyen, Double giacu, Double giamoi, String baohanh, int moi, int dacbiet,String anh, String newsletter)
-//	{
-////		sessionFactory.getCurrentSession().beginTransaction();
-//		Examinationquestion sp=getById(id);
-//		sp.setTen(ten);
-//		sp.setInstock(instock);
-//		sp.setVanchuyen(vanchuyen);
-//		sp.setGiacu(giacu);
-//		sp.setGiamoi(giamoi);
-//		sp.setBaohanh(baohanh);
-//		sp.setMoi(moi);
-//		sp.setDacbiet(dacbiet);
-//		sp.setAnh(anh);
-//		sp.setNewsletter(newsletter);
-//		sessionFactory.getCurrentSession().update(sp);
-////		sessionFactory.getCurrentSession().getTransaction().commit();
-//	}
+	public void update(Examinationquestion examquestion) {
+		sessionFactory.getCurrentSession().update(examquestion);
+	}
 	public void delete(int id)
 	{
 		Examinationquestion examquestion=getById(id);

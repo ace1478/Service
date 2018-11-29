@@ -35,27 +35,15 @@ public class ReadquestionDao {
 	{
 		return (Readquestion)sessionFactory.getCurrentSession().get(Readquestion.class, id);
 	}
-	public void add(Readquestion sp)
+	public void add(Readquestion readquestion)
 	{
-		sessionFactory.getCurrentSession().saveOrUpdate(sp);
+		sessionFactory.getCurrentSession().saveOrUpdate(readquestion);
 	}
-//	public void update(int id, String ten, int instock, String vanchuyen, Double giacu, Double giamoi, String baohanh, int moi, int dacbiet,String anh, String newsletter)
-//	{
-////		sessionFactory.getCurrentSession().beginTransaction();
-//		Readquestion sp=getById(id);
-//		sp.setTen(ten);
-//		sp.setInstock(instock);
-//		sp.setVanchuyen(vanchuyen);
-//		sp.setGiacu(giacu);
-//		sp.setGiamoi(giamoi);
-//		sp.setBaohanh(baohanh);
-//		sp.setMoi(moi);
-//		sp.setDacbiet(dacbiet);
-//		sp.setAnh(anh);
-//		sp.setNewsletter(newsletter);
-//		sessionFactory.getCurrentSession().update(sp);
-////		sessionFactory.getCurrentSession().getTransaction().commit();
-//	}
+
+	public void update(Readquestion readquestion) {
+		sessionFactory.getCurrentSession().update(readquestion);
+	}
+	
 	public void delete(int id)
 	{
 		Readquestion readquestion=getById(id);
@@ -69,13 +57,13 @@ public class ReadquestionDao {
 		return (List<Readquestion>)query.list();
 	}
 	
-	public List<Readquestion> getListByLevelId(String readexeriseid){
+	public List<Readquestion> getListByReadExerciseId(int readexeriseid){
 		String hql="FROM Readquestion WHERE readexeriseid='"+ readexeriseid +"'";
 		Query query=sessionFactory.getCurrentSession().createQuery(hql);
 		return (List<Readquestion>)query.list();
 	}
 	
-	public List<Readquestion> getListPage(int first, int max, String readexeriseid)
+	public List<Readquestion> getListByReadExerciseIdPage(int first, int max, String readexeriseid)
 	{
 		String hql="FROM Readquestion WHERE readexeriseid='"+ readexeriseid +"'";
 		Query query=sessionFactory.getCurrentSession().createQuery(hql);

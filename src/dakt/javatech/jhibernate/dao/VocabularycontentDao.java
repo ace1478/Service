@@ -9,8 +9,6 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import dakt.javatech.jhibernate.entity.Readexercise;
-import dakt.javatech.jhibernate.entity.Readquestion;
 import dakt.javatech.jhibernate.entity.Vocabularycontent;
 
 @Component 
@@ -37,9 +35,13 @@ public class VocabularycontentDao {
 	{
 		return (Vocabularycontent)sessionFactory.getCurrentSession().get(Vocabularycontent.class, id);
 	}
-	public void add(Vocabularycontent sp)
+	public void add(Vocabularycontent vocabularycontent)
 	{
-		sessionFactory.getCurrentSession().saveOrUpdate(sp);
+		sessionFactory.getCurrentSession().saveOrUpdate(vocabularycontent);
+	}
+	
+	public void update(Vocabularycontent vocabularycontent) {
+		sessionFactory.getCurrentSession().update(vocabularycontent);
 	}
 
 	public void delete(int id)

@@ -11,35 +11,27 @@ import org.codehaus.jackson.annotate.JsonBackReference;
  */
 public class Readexercise implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private Integer readexeriseid;
 	private String readname;
 	private String readimage;
 	private Integer checkcauhoi;
-	@JsonBackReference
-	private Set<Readquestion> readquestions;
-	private Level level;
+	private Integer levelid;
 
-	public Level getLevel() {
-		return level;
+	public Integer getLevelid() {
+		return levelid;
 	}
 
-	public void setLevel(Level level) {
-		this.level = level;
+	public void setLevelid(Integer levelid) {
+		this.levelid = levelid;
 	}
 
-	public Readexercise() {
-	}
-
-	public Readexercise(String readname, String readimage, Integer checkcauhoi, Set readquestions) {
-		this.readname = readname;
-		this.readimage = readimage;
-		this.checkcauhoi = checkcauhoi;
-		this.readquestions = readquestions;
-	}
+//	public Readexercise(String readname, String readimage, Integer checkcauhoi, Set readquestions) {
+//		this.readname = readname;
+//		this.readimage = readimage;
+//		this.checkcauhoi = checkcauhoi;
+//		this.readquestions = readquestions;
+//	}
 
 	public Integer getReadexeriseid() {
 		return this.readexeriseid;
@@ -71,14 +63,6 @@ public class Readexercise implements java.io.Serializable {
 
 	public void setCheckcauhoi(Integer checkcauhoi) {
 		this.checkcauhoi = checkcauhoi;
-	}
-
-	public Set getReadquestions() {
-		return this.readquestions;
-	}
-
-	public void setReadquestions(Set readquestions) {
-		this.readquestions = readquestions;
 	}
 
 }

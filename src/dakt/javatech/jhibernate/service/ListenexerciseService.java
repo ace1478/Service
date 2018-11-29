@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dakt.javatech.jhibernate.dao.ListenexerciseDao;
-import dakt.javatech.jhibernate.entity.Account;
 import dakt.javatech.jhibernate.entity.Listenexercise;
 
 @Service
@@ -39,13 +38,20 @@ public class ListenexerciseService {
 	public Listenexercise getById(int id)
 	{
 		return listenexrDAO.getById(id);
-
 	}
+	
 	@Transactional
-	public void add(Listenexercise sp)
+	public void add(Listenexercise listenexercise)
 	{
-		 listenexrDAO.add(sp);
+		 listenexrDAO.add(listenexercise);
 	}
+	
+	@Transactional
+	public void update(Listenexercise listenexercise)
+	{
+		 listenexrDAO.update(listenexercise);;
+	}
+	
 	@Transactional
 	public void delete(int id)
 	{

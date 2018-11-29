@@ -35,27 +35,15 @@ public class SlidebannerDao {
 	{
 		return (Slidebanner)sessionFactory.getCurrentSession().get(Slidebanner.class, id);
 	}
-	public void add(Slidebanner sp)
+	public void add(Slidebanner slidebanner)
 	{
-		sessionFactory.getCurrentSession().saveOrUpdate(sp);
+		sessionFactory.getCurrentSession().saveOrUpdate(slidebanner);
 	}
-//	public void update(int id, String ten, int instock, String vanchuyen, Double giacu, Double giamoi, String baohanh, int moi, int dacbiet,String anh, String newsletter)
-//	{
-////		sessionFactory.getCurrentSession().beginTransaction();
-//		Slidebanner sp=getById(id);
-//		sp.setTen(ten);
-//		sp.setInstock(instock);
-//		sp.setVanchuyen(vanchuyen);
-//		sp.setGiacu(giacu);
-//		sp.setGiamoi(giamoi);
-//		sp.setBaohanh(baohanh);
-//		sp.setMoi(moi);
-//		sp.setDacbiet(dacbiet);
-//		sp.setAnh(anh);
-//		sp.setNewsletter(newsletter);
-//		sessionFactory.getCurrentSession().update(sp);
-////		sessionFactory.getCurrentSession().getTransaction().commit();
-//	}
+
+	public void update(Slidebanner slidebanner) {
+		sessionFactory.getCurrentSession().update(slidebanner);
+	}
+	
 	public void delete(int id)
 	{
 		Slidebanner slidebanner=getById(id);

@@ -36,9 +36,15 @@ public class ReadExerciseService {
 	}
 	
 	@Transactional
-	public void add(Readexercise sp)
+	public void add(Readexercise readexercise)
 	{
-		readExerciseDao.add(sp);
+		readExerciseDao.add(readexercise);
+	}
+	
+	@Transactional
+	public void update(Readexercise readexercise)
+	{
+		readExerciseDao.update(readexercise);
 	}
 	
 	@Transactional

@@ -41,11 +41,11 @@ public class MemberDao {
 	{
 		sessionFactory.getCurrentSession().saveOrUpdate(mem);
 	}
-//	public void update(Member member)
-//	{
-//		Member mem=getById(member.getMemberid());
-//		sessionFactory.getCurrentSession().update(mem);
-//	}
+
+	public void update(Member mem) {
+		sessionFactory.getCurrentSession().update(mem);
+	}
+	
 	public void delete(int id)
 	{
 		Member mem=getById(id);

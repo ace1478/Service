@@ -31,9 +31,15 @@ public class VocabularycontentService {
 	}
 	
 	@Transactional
-	public void add(Vocabularycontent sp)
+	public void add(Vocabularycontent vocabularycontent)
 	{
-		vocabularyContentDao.add(sp);
+		vocabularyContentDao.add(vocabularycontent);
+	}
+	
+	@Transactional
+	public void update(Vocabularycontent vocabularycontent)
+	{
+		vocabularyContentDao.update(vocabularycontent);
 	}
 	
 	@Transactional

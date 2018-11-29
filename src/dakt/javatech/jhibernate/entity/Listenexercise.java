@@ -19,28 +19,10 @@ public class Listenexercise implements java.io.Serializable {
 	private String listenexercisename;
 	private String listenexerciseimage;
 	private Integer checkcauhoi;
-	@JsonBackReference
-	private Set<Listenquestion> listenquestions;
-	private Level level;
+	private Integer levelid;
 	
-	public Level getLevel() {
-		return level;
-	}
-
-	public void setLevel(Level level) {
-		this.level = level;
-	}
-
 	public Listenexercise() {
 	}
-
-//	public Listenexercise(String listenexercisename, String listenexerciseimage, Integer checkcauhoi,
-//			Set listenquestions) {
-//		this.listenexercisename = listenexercisename;
-//		this.listenexerciseimage = listenexerciseimage;
-//		this.checkcauhoi = checkcauhoi;
-//		this.listenquestions = listenquestions;
-//	}
 
 	public Integer getListenexerciseid() {
 		return this.listenexerciseid;
@@ -74,12 +56,11 @@ public class Listenexercise implements java.io.Serializable {
 		this.checkcauhoi = checkcauhoi;
 	}
 
-	public Set getListenquestions() {
-		return this.listenquestions;
+	public Integer getLevelid() {
+		return levelid;
 	}
 
-	public void setListenquestions(Set listenquestions) {
-		this.listenquestions = listenquestions;
+	public void setLevelid(Integer levelid) {
+		this.levelid = levelid;
 	}
-
 }

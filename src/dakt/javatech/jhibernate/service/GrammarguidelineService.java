@@ -27,9 +27,15 @@ public class GrammarguidelineService {
 		return GrammarguidelineDao.getById(id);
 	}
 	@Transactional
-	public void add(Grammarguideline sp) {
-		GrammarguidelineDao.add(sp);
+	public void add(Grammarguideline gramguideline) {
+		GrammarguidelineDao.add(gramguideline);
 	}
+	
+	@Transactional
+	public void update(Grammarguideline gramguideline) {
+		GrammarguidelineDao.update(gramguideline);
+	}
+	
 	@Transactional
 	public void delete(int id) {
 		GrammarguidelineDao.delete(id);
