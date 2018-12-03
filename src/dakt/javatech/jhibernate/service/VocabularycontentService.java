@@ -48,11 +48,11 @@ public class VocabularycontentService {
 		vocabularyContentDao.delete(id);
 	}
 	
-	@Transactional
-	public List<Vocabularycontent> getId(String s, int id)
-	{
-		return vocabularyContentDao.getId(s, id);
-	}
+//	@Transactional
+//	public List<Vocabularycontent> getId(String s, int id)
+//	{
+//		return vocabularyContentDao.getId(s, id);
+//	}
 	
 	@Transactional
 	public List<Vocabularycontent> getListByLevelId(String vocabid)
