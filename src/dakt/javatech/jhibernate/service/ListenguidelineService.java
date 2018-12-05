@@ -51,11 +51,11 @@ public class ListenguidelineService {
 			listenGuidelineDao.delete(id);
 		}
 		
-		@Transactional
-		public List<ListenGuideline> getId(String s, int id)
-		{			
-			return listenGuidelineDao.getId(s, id) ;
-		}
+//		@Transactional
+//		public List<ListenGuideline> getId(String s, int id)
+//		{			
+//			return listenGuidelineDao.getId(s, id) ;
+//		}
 		
 		@Transactional
 		public List<ListenGuideline> getListByLevelId(String level)

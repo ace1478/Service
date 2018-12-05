@@ -49,11 +49,11 @@ public class VocabularyguidelineService {
 		vocabularyGuidelineDao.delete(id);;
 	}
 	
-	@Transactional
-	public List<Vocabularyguideline> getId(String s, int id)
-	{
-		return vocabularyGuidelineDao.getId(s,id);
-	}
+//	@Transactional
+//	public List<Vocabularyguideline> getId(String s, int id)
+//	{
+//		return vocabularyGuidelineDao.getId(s,id);
+//	}
 	
 	@Transactional
 	public List<Vocabularyguideline> getListByLevelId(String level)
