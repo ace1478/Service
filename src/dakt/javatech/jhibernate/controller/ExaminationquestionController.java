@@ -50,5 +50,16 @@ public class ExaminationquestionController {
 	public void deleteExaminationquestion(@PathVariable("id") int id) {
 		examinationquestionService.delete(id);	
 	}
-
+	@RequestMapping(value="/getListExaminationquestionByPart/part={part}&examinationId={examinationId}", method = RequestMethod.GET, headers ="Accept=application/json" )
+	public List<Examinationquestion> getListByPart(@PathVariable String part,@PathVariable String examinationId)
+	{
+		List<Examinationquestion> list=examinationquestionService.getListByPart(part,examinationId);
+		return list;
+	}
+	@RequestMapping(value="/getListExaminationquestionByExaminationId/ExaminationId={ExaminationId}", method = RequestMethod.GET, headers ="Accept=application/json" )
+	public List<Examinationquestion> getListByExaminationId(@PathVariable int ExaminationId)
+	{
+		List<Examinationquestion> list=examinationquestionService.getListByExaminationId(ExaminationId);
+		return list;
+	}
 }

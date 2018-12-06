@@ -55,5 +55,17 @@ public class ExaminationquestionDao {
 		Query query=sessionFactory.getCurrentSession().createQuery(hql);
 		return (List<Examinationquestion>)query.list();
 	}
+	public List<Examinationquestion> getListByPart(String part,String  ExaminationId )
+	{
+		String hql="FROM Examinationquestion WHERE part= '"+part+"' and ExaminationId ='"+ExaminationId+"'"  ;
+		Query query=sessionFactory.getCurrentSession().createQuery(hql);
+		return (List<Examinationquestion>)query.list();
+	}
+	public List<Examinationquestion> getListByExaminationId(int id)
+	{
+		String hql= "From Examinationquestion where ExaminationId="+id;
+		Query query=sessionFactory.getCurrentSession().createQuery(hql);
+		return (List<Examinationquestion>)query.list();
+	}
 
 }

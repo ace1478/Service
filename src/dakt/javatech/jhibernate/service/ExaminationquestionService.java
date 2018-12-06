@@ -52,5 +52,16 @@ public class ExaminationquestionService {
 	{
 		examinationquestionDao.delete(id);
 	}
+	@Transactional
+	public List<Examinationquestion> getListByPart(String part,String examinationId)
+	{
+		return examinationquestionDao.getListByPart(part,examinationId);
+	}
+	@Transactional
+	public List<Examinationquestion> getListByExaminationId(int id)
+	{
+		return examinationquestionDao.getListByExaminationId(id);
+	}
+
 
 }

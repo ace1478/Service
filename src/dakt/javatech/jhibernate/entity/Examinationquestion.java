@@ -23,6 +23,15 @@ public class Examinationquestion implements java.io.Serializable {
 	private String option3;
 	private String option4;
 	private String correctanswer;
+	private String part;
+
+	public String getPart() {
+		return part;
+	}
+
+	public void setPart(String part) {
+		this.part = part;
+	}
 
 	public Examinationquestion() {
 	}
