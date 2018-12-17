@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import dakt.javatech.jhibernate.entity.Listenquestion;
+import dakt.javatech.jhibernate.entity.Readexercise;
 import dakt.javatech.jhibernate.service.ListenquestionService;
 
 @RestController
@@ -39,6 +41,20 @@ public class ListenquestionController {
 	public List<Listenquestion> getListByListenExerciseId(@PathVariable String ListenExerciseId) {
 		List<Listenquestion> list = listenQuestionService.getListByListenExerciseId(ListenExerciseId);
 		return list;
+	}
+	@RequestMapping(value ="/addListenQuestion", method = RequestMethod.POST, headers ="Accept=application/json")
+	public void addReadExercise(@RequestBody Listenquestion listenQuestion) {
+		listenQuestionService.add(listenQuestion);
+	}
+	
+	@RequestMapping(value = "/updateListenQuestion", method = RequestMethod.PUT, headers = "Accept=application/json")
+	public void updateReadexercise(@RequestBody Listenquestion listenQuestion) {
+		listenQuestionService.update(listenQuestion);
+	}
+
+	@RequestMapping(value = "/deleteListenQuestion/{id}", method = RequestMethod.DELETE, headers = "Accept=application/json")
+	public void deleteReadexercise(@PathVariable("id") int id) {
+		listenQuestionService.delete(id);	
 	}
 
 

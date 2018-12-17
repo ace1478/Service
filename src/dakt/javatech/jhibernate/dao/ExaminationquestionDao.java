@@ -19,7 +19,7 @@ public class ExaminationquestionDao {
 	
 	public List<Examinationquestion> list()
 	{
-		String hql="FROM Examinationquestion";
+		String hql="FROM Examinationquestion ";
 		Query query=sessionFactory.getCurrentSession().createQuery(hql);
 		return query.list();
 	}
@@ -63,7 +63,7 @@ public class ExaminationquestionDao {
 	}
 	public List<Examinationquestion> getListByExaminationId(int id)
 	{
-		String hql= "From Examinationquestion where ExaminationId="+id;
+		String hql= "From Examinationquestion where ExaminationId="+id +"order by part";
 		Query query=sessionFactory.getCurrentSession().createQuery(hql);
 		return (List<Examinationquestion>)query.list();
 	}
